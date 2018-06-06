@@ -69,3 +69,6 @@ class App extends Component {
 }
 
 export default App
+
+// http://nextzy-react-todos.surge.sh/
+// https://github.com/rainstormza/react-todos
