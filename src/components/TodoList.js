@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { onToggleTodo } from '../redux'
 
 const TodoList = props => {
   const { todos, onToggleTodo } = props
@@ -26,7 +28,7 @@ const TodoList = props => {
             <div
               style={{
                 paddingLeft: '10px',
-                textDecorationLine: !item.completed ? '' : 'line-through'
+                textDecoration: !item.completed ? 'none' : 'line-through'
               }}
             >
               {item.text}
@@ -38,4 +40,15 @@ const TodoList = props => {
   )
 }
 
-export default TodoList
+const mapStateToProps = state => {
+  return {
+    todos: state.todos
+  }
+}
+
+const mapDispatchToProps = { onToggleTodo }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
