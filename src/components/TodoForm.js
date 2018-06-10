@@ -4,7 +4,7 @@ const TodoForm = props => {
   const { onAddTodo, OnChangeText, text } = props
   return (
     <div className="section">
-      <div className="columns is-desktop">
+      <div className="columns">
         <div className="column is-half is-offset-one-quarter">
           <div className="is-flex">
             <input

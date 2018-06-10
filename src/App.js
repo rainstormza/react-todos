@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TodoHeader from './components/TodoHeader'
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
@@ -34,10 +35,7 @@ class App extends Component {
     const todos = this.state.todos.map(
       todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)
     )
-
-    this.setState({
-      todos
-    })
+    this.setState({ todos })
   }
 
   debugState = () => {
@@ -47,13 +45,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <section className="hero is-primary">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">Todos</h1>
-            </div>
-          </div>
-        </section>
+        <TodoHeader />
         <TodoForm
           onAddTodo={this.onAddTodo}
           OnChangeText={this.OnChangeText}
