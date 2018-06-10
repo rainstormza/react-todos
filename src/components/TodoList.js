@@ -5,7 +5,7 @@ import { onToggleTodo } from '../redux'
 const TodoList = props => {
   const { todos, onToggleTodo } = props
   return (
-    <div className="columns is-desktop">
+    <div className="columns">
       <div className="column is-half is-offset-one-quarter">
         {todos.map(item => (
           <div
